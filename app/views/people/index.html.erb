@@ -1,6 +1,6 @@
 <h1>People</h1>
   <% @people.each do |person| %>
-    <p>name: <%= person.first_name %></p>
+    <p>name: <%= person.full_name %></p>
     <p>age: <%= person.age %></p>
     <%= link_to 'show more details', person_path(person.id) %>
   <hr>
