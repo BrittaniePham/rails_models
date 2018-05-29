@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+20.times do
+  Person.create(
+    name: Faker::HowIMetYourMother.character,
+    age: Faker::Number.between(1, 80),
+    hair_color: Faker::Color.color_name,
+    eye_color: ['dark brown', 'blue', 'hazel', 'light brown', 'green'].sample,
+    gender: Faker::Dog.gender,
+    alive: Faker::Boolean.boolean
+  )
+end
+
+puts 'seeded'

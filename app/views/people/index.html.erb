@@ -1,0 +1,7 @@
+<h1>People</h1>
+  <% @people.each do |person| %>
+    <p>name: <%= person.name %></p>
+    <p>age: <%= person.age %></p>
+    <%= link_to 'show', person_path(person.id) %>
+  <hr>
+  <% end %>
