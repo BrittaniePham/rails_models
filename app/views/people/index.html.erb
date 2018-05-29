@@ -2,6 +2,6 @@
   <% @people.each do |person| %>
     <p>name: <%= person.name %></p>
     <p>age: <%= person.age %></p>
-    <%= link_to 'show', person_path(person.id) %>
+    <%= link_to 'show more details', person_path(person.id) %>
   <hr>
   <% end %>
