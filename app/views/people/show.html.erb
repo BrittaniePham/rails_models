@@ -6,3 +6,4 @@
   <p>alive: <%= @person.alive %></p>
 
   <%= link_to 'edit', edit_person_path %>
+  <%= link_to 'delete', person_path(@person.id), method: :delete %>
