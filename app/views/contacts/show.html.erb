@@ -1,6 +1,12 @@
-<h1>Contact by</h1>
-<p>email: <%= @contact.email %></p>
-<p>phone number: <%= @contact.phone_number %></p>
-<p>address: <%= @contact.address %></p>
+<% if @contact.nil? %>
+  <h2>This person does not have any contact information</h2>
+  <%= link_to 'back', person_path(@person.id)%>
+<% else %>
+  <h1>Contact by</h1>
+  <p>email: <%= @contact.email %></p>
+  <p>phone number: <%= @contact.phone_number %></p>
+  <p>address: <%= @contact.address %></p>
 
-<%= link_to 'Edit Contact info', edit_person_contact_path %>
+  <%= link_to 'Edit contact info', edit_person_contact_path %>
+  <%= link_to 'Delete contact info', person_contact_path(@contact.id), method: :delete%>
+<% end %>
