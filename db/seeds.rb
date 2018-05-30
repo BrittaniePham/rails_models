@@ -7,13 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 20.times do
-  Person.create(
-    name: Faker::HowIMetYourMother.character,
+  person = Person.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     age: Faker::Number.between(1, 80),
     hair_color: Faker::Color.color_name,
     eye_color: ['dark brown', 'blue', 'hazel', 'light brown', 'green'].sample,
     gender: Faker::Dog.gender,
     alive: Faker::Boolean.boolean
+  )
+
+  contact = person.create_contact(
+    email: Faker::Internet.email,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    address: Faker::Address.full_address
   )
 end
 

@@ -7,3 +7,4 @@
 
   <%= link_to 'edit', edit_person_path %>
   <%= link_to 'delete', person_path(@person.id), method: :delete %>
+  <%= link_to 'contact info', person_contact_path(@person.id)%>
